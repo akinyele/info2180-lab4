@@ -7,6 +7,19 @@ window.onload = function() {
 
 
 hitBoundary();
+
+    var start = document.getElementById("start");
+    
+    start.addEventListener("click" , function(){
+        
+        status = "";
+        var walls = document.getElementsByClassName("boundary");
+        for (var i = 0; i < walls.length; i++) {
+        walls[i].setAttribute("class", "boundary");
+        
+    }
+    }); 
+    
 gameOver();
 
 
@@ -81,6 +94,8 @@ function gameOver(){
     
     
 }   
+
+
     
     
 
