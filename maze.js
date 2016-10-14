@@ -1,18 +1,20 @@
 
 //alert('Hello JavaScript!');
 
-var status;
+var check;
 
 window.onload = function() {
+
 
 
 hitBoundary();
 
     var start = document.getElementById("start");
-    
     start.addEventListener("click" , function(){
-        
-        status = "";
+        var status = document.getElementById("status");
+        status.innerHTML="Move your mouse over the \"S\" to begin.";
+
+        check = "";
         var walls = document.getElementsByClassName("boundary");
         for (var i = 0; i < walls.length; i++) {
         walls[i].setAttribute("class", "boundary");
@@ -69,25 +71,29 @@ walls[4].addEventListener("mouseover", function(){
 function redBoundary() {
     
     //alert("load");
-    status = "1";
+    check = "1";
     var walls = document.getElementsByClassName("boundary");
-    
+    var status = document.getElementById("status");
+
     for (var i = 0; i < walls.length; i++) {
     walls[i].setAttribute("class", "boundary youlose");
         
     }
+    status.innerHTML="Sorry, You Lose !";
+    
     
 }
 
 function gameOver(){
     
-    
-    
+    var status = document.getElementById("status");
+
     var end = document.getElementById("end");
     end.addEventListener("mouseover" , function(){
         if (status != "1"){
+        
+        status.innerHTML="You Won !";
             
-        alert("You Won");
         }
     });
     
