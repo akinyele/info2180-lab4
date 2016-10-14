@@ -1,12 +1,14 @@
 
 //alert('Hello JavaScript!');
 
-
+var status;
 
 window.onload = function() {
 
 
 hitBoundary();
+gameOver();
+
 
 };
 
@@ -54,6 +56,7 @@ walls[4].addEventListener("mouseover", function(){
 function redBoundary() {
     
     //alert("load");
+    status = "1";
     var walls = document.getElementsByClassName("boundary");
     
     for (var i = 0; i < walls.length; i++) {
@@ -62,5 +65,24 @@ function redBoundary() {
     }
     
 }
+
+function gameOver(){
+    
+    
+    
+    var end = document.getElementById("end");
+    end.addEventListener("mouseover" , function(){
+        if (status != "1"){
+            
+        alert("You Won");
+        }
+    });
+    
+    
+    
+}   
+    
+    
+
 
 
